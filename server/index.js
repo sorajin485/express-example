@@ -1,5 +1,6 @@
 const express = require('express')
-
+const userRouter = require('../routes/user.route.js')
+const commoncodeRouter = require('../routes/commoncode.route.js')
 const app = express()
 
 /**
@@ -12,8 +13,13 @@ const app = express()
 app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({extended: true})) // for parsing application/x-www-form-urlencoded
 
-const port = 3000
+
+app.use('/commoncode',commoncodeRouter);
+app.use('/users',userRouter);
+
+const port = 9242
 app.get('/', (req, res) => {
+  console.log('get / ');
   res.send('Hello World!')
 })
 
