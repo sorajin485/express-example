@@ -1,4 +1,4 @@
-const commoncodeModel = require("../models/commoncode.model.js");
+const commoncodeModel = require("../models/company_code.model.js");
 
 exports.commoncode_get = (req,res) => {
   console.log("get commoncode controller")

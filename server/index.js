@@ -1,6 +1,7 @@
 const express = require('express')
 const userRouter = require('../routes/user.route.js')
 const commoncodeRouter = require('../routes/commoncode.route.js')
+const company_code_Router = require('../routes/company_code.route.js')
 const app = express()
 
 /**
@@ -16,6 +17,7 @@ app.use(express.urlencoded({extended: true})) // for parsing application/x-www-f
 
 app.use('/commoncode',commoncodeRouter);
 app.use('/users',userRouter);
+app.use('/company_code',company_code_Router);
 
 const port = 9242
 app.get('/', (req, res) => {
